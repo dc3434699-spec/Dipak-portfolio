@@ -1,0 +1,152 @@
+.farmVisits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  animation: fadeIn var(--transition-normal);
+}
+
+.header h1 {
+  font-size: var(--text-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-2);
+}
+
+.contentLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .contentLayout {
+    flex-direction: row;
+    height: 600px;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    max-width: 400px;
+    overflow-y: auto;
+    padding-right: var(--space-2);
+  }
+}
+
+.farmList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.farmCard {
+  padding: var(--space-4);
+  cursor: pointer;
+}
+
+.activeFarm {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.farmInfo h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-1);
+}
+
+.farmType {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.farmMetaRow {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.starIcon {
+  color: var(--color-accent);
+}
+
+.bookingCard {
+  padding: var(--space-6);
+  background: linear-gradient(to bottom, var(--color-bg-surface), var(--color-bg-subtle));
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.inputGroup label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.dateInput, .selectInput {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  padding-left: var(--space-10);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.dateInput:focus, .selectInput:focus {
+  border-color: var(--color-primary);
+}
+
+.mapContainer {
+  flex: 2;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  min-height: 400px;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
