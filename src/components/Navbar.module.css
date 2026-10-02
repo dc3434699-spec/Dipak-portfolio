@@ -44,25 +44,103 @@
   font-weight: 600;
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
 }
 
 .navLink:hover {
   color: var(--color-primary);
 }
 
+.navLink:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
 .active {
   color: var(--color-primary);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.cartBtn:hover {
+  background-color: var(--color-bg-subtle);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 2px solid white;
+}
+
 .mobileToggle {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
   color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.mobileToggle:hover {
+  background-color: var(--color-bg-subtle);
 }
 
 @media (min-width: 768px) {
   .mobileToggle {
     display: none;
   }
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  top: 4rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 49;
 }
 
 .mobileMenu {
@@ -75,17 +153,21 @@
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-1);
   box-shadow: var(--shadow-md);
+  z-index: 50;
 }
 
 .mobileNavLink {
   font-weight: 600;
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
-  padding: var(--space-2) 0;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
 }
 
 .mobileNavLink:hover {
   color: var(--color-primary);
+  background-color: var(--color-bg-subtle);
 }

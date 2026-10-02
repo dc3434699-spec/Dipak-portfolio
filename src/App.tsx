@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from './layouts/MainLayout';
 import { Home } from './pages/Home';
 import { Marketplace } from './pages/Marketplace';
@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="marketplace" element={<Marketplace />} />
+          <Route path="marketplace/:id" element={<Navigate to="/marketplace" replace />} />
           <Route path="visits" element={<FarmVisits />} />
           <Route path="workers" element={<Workers />} />
           <Route path="machinery" element={<Machinery />} />
